@@ -31,6 +31,17 @@
         </v-col>
       </v-row>
       <v-row>
+        <v-col cols="3">
+          <v-select label="Language" :items="lan"></v-select>
+        </v-col>
+        <v-col cols="3">
+          <v-select label="N-gram" :items="ngram"></v-select>
+        </v-col>
+        <v-col cols="3">
+          <v-select label="Feauture" :items="feauture"></v-select>
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col>
           <v-btn
             v-if="isExtract"
@@ -41,6 +52,7 @@
           <!-- <v-btn v-if="!isExtract" @click="change" class="primary">Re</v-btn> -->
         </v-col>
       </v-row>
+
       <v-row>
         <v-col cols="9">
           <v-card v-if="!isExtract">
@@ -59,6 +71,9 @@ export default {
     return {
       isExtract: true,
       keywords: ["thanh", "cho", "google", "kaggle"],
+      lan: ["en", "vi"],
+      feauture: ["WFreq", "WRel", "tf", "WCase", "WPos", "WSpread"],
+      ngram: [1, 2, 3, 4, 5],
       text: "",
       textraw: "",
       headers: [
